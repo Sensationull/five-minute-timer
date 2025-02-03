@@ -1,39 +1,21 @@
 import { useState } from "react";
-import reactLogo from "./assets/react.svg";
-import viteLogo from "/vite.svg";
+
 import "./App.css";
+import CountdownTimer from "./Countdown";
 
 function App() {
-  const [count, setCount] = useState(0);
-
-  const handleClick = (event: React.BaseSyntheticEvent) => {
-    console.log({ target: event.target.value });
-  };
   return (
     <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-      <button onClick={handleClick}>Some more things</button>
+      <CountdownTimer />
     </>
   );
 }
 
 export default App;
+
+/*
+    When the page is first loaded, the counter displays 5 minutes (i.e. 5:00)
+    When the user clicks "Start", the counter starts counting down.
+    When the user clicks "Stop", the timer should stop elapsing time.
+    When the user clicks "Reset", the timer should be reset to 5 minutes again
+  */
